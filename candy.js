@@ -42,6 +42,12 @@ function startGame() {
             tile.id = r.toString() + "-" + c.toString();
             tile.src = "./images/" + randomCandy() + ".png";
 
+            // Add touch events for mobile
+tile.addEventListener("touchstart", touchStart); // Touch to initiate dragging
+tile.addEventListener("touchmove", touchMove);   // Move the candy
+tile.addEventListener("touchend", touchEnd);     // Release the candy to drop
+
+
             // Add drag-and-drop functionality
             tile.addEventListener("dragstart", dragStart); // Click on a candy, initialize drag process
             tile.addEventListener("dragover", dragOver);   // Clicking on candy, moving mouse to drag the candy
@@ -127,8 +133,30 @@ function dragDrop() {
     otherTile = this; // Reference the tile that is being dropped on
 }
 
-function dragEnd() {
-    if (currTile.src.includes("blank") || otherTile.src.includes("blank")) {
+
+function touchStart(e) {
+    currTile = this;
+    e.preventDefault();
+}
+
+function touchMove(e) {
+    e.preventDefault(); // Prevent default scrolling behavior
+    var touch = e.touches[0];
+    var element = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    if (element && element.tagName === "IMG") {
+        otherTile = element;
+    }
+}
+
+function touchEnd(e) {
+    if (currTile && otherTile) {
+        handleSwap();
+    }
+}
+
+function handleSwap() {
+        if (currTile.src.includes("blank") || otherTile.src.includes("blank")) {
         return;
     }
 
@@ -164,6 +192,10 @@ function dragEnd() {
             gameStarted = true; // The game officially starts after the first valid move
         }
     }
+}
+
+function dragEnd() {
+    handleSwap();
 }
 
 function crushCandy() {
