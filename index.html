@@ -1,30 +1,48 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Candy Crush</title>
-        <link rel="stylesheet" href="candy.css">
-        <script src="candy.js"></script>
-      
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Crush</title>
+    <link rel="stylesheet" href="candy.css">
+    <script src="candy.js"></script>
 
-    <body>
-        <div class="header">
-            <img src="clorox-logo.png" alt="Logo Here" class="logo">
-            <h1>Title</h1>
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="clorox-logo.png" alt="Logo Here" class="logo">
+        <h1>Title</h1>
+    </div>
+
+    <!-- <div>Target :  10 </div> -->
+
+    <div class="target-section">
+        <p class="target-label">TARGET</p>
+        <div class="targets">
+            <div class="target">
+                <img src="images/blue-1.png" alt="Blue Target" class="target-icon">
+                <span class="target-count">10</span>
+            </div>
+            <!-- <div class="target">
+                <img src="orange_candy.png" alt="Orange Target" class="target-icon">
+                <span class="target-count">4</span>
+            </div> -->
         </div>
+    </div>
 
-        <div class="game-info">
-            <div class="game-info-item">Level: 1</div>
-            <div class="game-info-item">Moves: 20</div>
-            <div class="game-info-item">Score: <span id="score">0</span></div>
-        </div>
+    <div class="game-info">
+        <div class="game-info-item">Level: 1</div>
+        <div class="game-info-item">Moves: 20</div>
+        <div class="game-info-item">Score: <span id="score">0</span></div>
+    </div>
 
-        <div id="board"></div>
-         <!-- <img id="0-0" src="./images/Red.png">  append here many times -->
-    </body>
+
+
+    <div id="board"></div>
+    <!-- <img id="0-0" src="./images/Red.png">  append here many times -->
+</body>
+
 </html>
-
