@@ -1,8 +1,11 @@
 /* Reset default margin, padding, and box-sizing for all elements */
 * {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    box-sizing: border-box;
+    /* Ensure padding and border are included in element's total width and height */
 }
 
 /* Set the overall body style */
@@ -21,66 +24,110 @@ body {
 
 /* Style for the header section */
 .header {
-    padding: 20px; /* Add padding around the header */
+    padding: 20px;
+    /* Add padding around the header */
 }
 
 /* Style for the logo */
 .logo {
-    width: 100px; /* Set the logo width */
-    margin-bottom: 10px; /* Space below the logo */
+    width: 100px;
+    /* Set the logo width */
+    margin-bottom: 10px;
+    /* Space below the logo */
 }
+
+/* Define the highlighting effect */
+/* .highlight-item {
+    border: 2px solid yellow;
+    box-shadow: 0 0 15px yellow;
+} */
+
+/* Scaling effect for the selected candy */
+.scale-up {
+    transform: scale(1.2); /* Scale the candy by 1.2x its original size */
+    transition: transform 0.2s ease-in-out; /* Smooth scaling transition */
+}
+
+
 
 /* Style for the main heading */
 h1 {
-    font-size: 2.5rem; /* Set the font size of the heading */
-    margin: 10px 0; /* Vertical margin for the heading */
+    font-size: 2.5rem;
+    /* Set the font size of the heading */
+    margin: 10px 0;
+    /* Vertical margin for the heading */
 }
 
 /* Style for the game information section */
 .game-info {
-    display: flex;              /* Use flexbox for layout */
-    justify-content: space-between; /* Space items evenly */
-    flex-wrap: nowrap;         /* Prevent items from wrapping to the next line */
-    margin: 20px 0;            /* Margin for spacing */
-    font-size: 1.5rem;         /* Font size */
-    overflow-x: auto;          /* Allow horizontal scrolling if needed */
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space items evenly */
+    flex-wrap: nowrap;
+    /* Prevent items from wrapping to the next line */
+    margin: 20px 0;
+    /* Margin for spacing */
+    font-size: 1.5rem;
+    /* Font size */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if needed */
 }
 
 .game-info-item {
-    flex: 0 0 33%;             /* Take up one-third of the space */
-    min-width: 100px;          /* Minimum width to maintain visibility */
-    text-align: center;        /* Center text within each item */
+    flex: 0 0 33%;
+    /* Take up one-third of the space */
+    min-width: 100px;
+    /* Minimum width to maintain visibility */
+    text-align: center;
+    /* Center text within each item */
 }
 
 
 /* Style for the game board */
 #board {
-    width: 100vw; /* 90% of the viewport width */
-    height: 100vw; /* Keeping the board square */
-    max-width: 450px; /* Maximum size for larger screens */
-    max-height: 450px; /* Maximum height for larger screens */
+    width: 100vw;
+    /* 90% of the viewport width */
+    height: 100vw;
+    /* Keeping the board square */
+    max-width: 300px;
+    /* Maximum size for larger screens */
+    max-height: 500px;
+    /* Maximum height for larger screens */
 
     /* Set the background color of the board */
-    background-color: lightblue; /* Background color */
+    background-color: lightblue;
+    /* Background color */
     /* Add a 5-pixel solid slate gray border */
-    border: 5px solid slategray; /* Border style */
+    border: 5px solid slategray;
+    /* Border style */
     /* Round the corners of the board with a 15-pixel radius */
-    border-radius: 15px; 
+    border-radius: 15px;
 
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
-    gap: 5px; /* Space between grid items */
-    margin: 0 auto; /* Center the board horizontally */
-    padding: 10px; /* Inner padding for the board */
+    display: grid;
+    /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr);
+    /* Create 5 equal columns */
+    gap: 5px;
+    /* Space between grid items */
+    margin: 0 auto;
+    /* Center the board horizontally */
+    padding: 10px;
+    /* Inner padding for the board */
 }
 
 /* Style for images inside the board */
 #board img {
-    width: 100%;   /* Set the width to fill the available space */
-    height: auto;  /* Maintain the aspect ratio */
-    max-width: 80px; /* Optional: Set a maximum width to prevent overflow */
-    max-height: 80px; /* Optional: Set a maximum height to prevent overflow */
-    border-radius: 10px; /* Keep the existing border radius */
+    width: 100%;
+    /* Set the width to fill the available space */
+    height: auto;
+    /* Maintain the aspect ratio */
+    max-width: 60px;
+    /* Optional: Set a maximum width to prevent overflow */
+    max-height: 60px;
+    /* Optional: Set a maximum height to prevent overflow */
+    border-radius: 10px;
+    /* Keep the existing border radius */
 }
 
 
@@ -91,45 +138,99 @@ h1 {
 /* Media Queries for responsive design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Smaller font size for medium screens */
+        font-size: 2rem;
+        /* Smaller font size for medium screens */
     }
 
     #board {
-        width: 100vw; /* Slightly larger board on medium screens */
-        height: 100vw; /* Maintain aspect ratio */
+        width: 100vw;
+        /* Slightly larger board on medium screens */
+        height: 100vw;
+        /* Maintain aspect ratio */
     }
 
     #board img {
-        max-width: 80px; /* Adjust max size for smaller screens */
+        max-width: 80px;
+        /* Adjust max size for smaller screens */
         max-height: 80px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.5rem; /* Smaller font size for small screens */
+        font-size: 1.5rem;
+        /* Smaller font size for small screens */
     }
 
     .game-info {
-        font-size: 1.2rem;       /* Adjust font size for small screens */
+        font-size: 1.2rem;
+        /* Adjust font size for small screens */
     }
 
     .game-info-item {
-        flex: 0 0 auto;          /* Keep items from growing or shrinking */
-        min-width: 100px;        /* Set a minimum width */
-        width: auto;             /* Allow items to take their natural width */
-        white-space: nowrap;     /* Prevent text from wrapping */
+        flex: 0 0 auto;
+        /* Keep items from growing or shrinking */
+        min-width: 100px;
+        /* Set a minimum width */
+        width: auto;
+        /* Allow items to take their natural width */
+        white-space: nowrap;
+        /* Prevent text from wrapping */
     }
 
     #board {
-        width: 100vw; /* Full width board on small screens */
-        height: 100vw; /* Maintain aspect ratio */
+        width: 100vw;
+        /* Full width board on small screens */
+        height: 100vw;
+        /* Maintain aspect ratio */
     }
 
     #board img {
-        max-width: 60px; /* Further reduce size for very small screens */
+        max-width: 60px;
+        /* Further reduce size for very small screens */
         max-height: 60px;
     }
 }
 
 
+
+
+
+
+
+.target-section {
+    background-color: #ffe6f7;
+    border-radius: 10px;
+    padding: 15px;
+    border: 3px solid #ff99cc;
+}
+
+.target-label {
+    font-size: 18px;
+    color: #ff6699;
+}
+
+.targets {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.target {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.target-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.target-count {
+    font-size: 18px;
+    color: #ff4d88;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
